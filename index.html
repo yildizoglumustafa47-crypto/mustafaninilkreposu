@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Gözlük Asistanı - MVP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎤 Akıllı Gözlük Asistanı</h1>
+            <p>Sesli komutlar ile başlayın</p>
+        </div>
+
+        <div class="card">
+            <!-- Kontrol Butonları -->
+            <div class="controls">
+                <button id="startBtn" class="btn btn-start">🎙️ Dinlemeye Başla</button>
+                <button id="stopBtn" class="btn btn-stop" disabled>⏹️ Durdur</button>
+            </div>
+
+            <!-- Durum Göstergesi -->
+            <div id="status" class="status">Hazır...</div>
+
+            <!-- Transkript (Yazıya Çevrilmiş Metin) -->
+            <div class="transcript-box">
+                <h3>Söyledikleriniz:</h3>
+                <div id="transcript" class="transcript">
+                    Henüz bir şey söylediniz...
+                </div>
+            </div>
+
+            <!-- Cevap Kutusu -->
+            <div class="response-box">
+                <h3>Asistan Cevabı:</h3>
+                <div id="response" class="response">
+                    Beklemede...
+                </div>
+            </div>
+
+            <!-- Komut Listesi -->
+            <div class="commands-box">
+                <h3>Örnek Komutlar:</h3>
+                <ul>
+                    <li>📍 "Neredesin?" - Konumunu göster</li>
+                    <li>⏰ "Saat kaç?" - Zamanı söyle</li>
+                    <li>👋 "Merhaba" - Selamla</li>
+                    <li>🔔 "Ne yapıyorsun?" - Durumu sor</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

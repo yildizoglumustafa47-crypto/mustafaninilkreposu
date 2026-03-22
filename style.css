@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Kontrol Butonları */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-start {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-start:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.btn-start:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-stop {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.btn-stop:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(245, 87, 108, 0.4);
+}
+
+.btn-stop:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Durum Göstergesi */
+.status {
+    text-align: center;
+    padding: 15px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.status.listening {
+    background: #c3e9ea;
+    color: #0066cc;
+    animation: pulse 1.5s infinite;
+}
+
+.status.speaking {
+    background: #fff4e6;
+    color: #ff6b00;
+}
+
+.status.error {
+    background: #fde8e8;
+    color: #d32f2f;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Metin Kutuları */
+.transcript-box,
+.response-box,
+.commands-box {
+    margin-top: 20px;
+}
+
+.transcript-box h3,
+.response-box h3,
+.commands-box h3 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.transcript,
+.response {
+    background: #f9f9f9;
+    border-left: 4px solid #667eea;
+    padding: 15px;
+    border-radius: 5px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.transcript {
+    border-left-color: #667eea;
+}
+
+.response {
+    border-left-color: #764ba2;
+}
+
+/* Komut Listesi */
+.commands-box ul {
+    list-style: none;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.commands-box li {
+    padding: 8px 0;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9em;
+}
+
+.commands-box li:last-child {
+    border-bottom: none;
+}
+
+.commands-box li:before {
+    content: "→ ";
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
